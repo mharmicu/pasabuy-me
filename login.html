@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+    <style>
+        /* Set a background image by replacing the URL below */
+        body {
+            background: url('images/hero_bg_2.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/pasabuy.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                PasaBuy.me</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+
+
+
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin-shipments.html" data-bs-target="#myModal"
+                            data-bs-toggle="modal">Shipments
+                            Table</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin-pasabuy.html" data-bs-target="#myModal" data-bs-toggle="modal">PasaBuy
+                            Table</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+
+    <div id="firebaseui-auth-container" class="mt-5"></div>
+    <div id="loader">Loading...</div>
+
+    <!--
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-4">
+                <div class="card border-0 shadow my-5">
+                    <div class="card-body p-5">
+                        <h4 class="text-center mb-5 font-weight-bold">SIGN IN</h4>
+
+                        <div class="mb-2">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                                placeholder="Type your Email">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" id="password"
+                                placeholder="Type your Password">
+                        </div>
+
+                        <button onclick="login()" class="btn btn-warning">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
+
+
+
+
+    <script src="fireBase.js"></script>
+    <script src="login.js"></script>
+
+</body>
+
+</html>

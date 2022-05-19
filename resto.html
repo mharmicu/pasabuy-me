@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resto</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        .carousel .carousel-item {
+            height: 300px;
+        }
+
+        .carousel-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/pasabuy.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                PasaBuy.me</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="tracker.html">Tracker</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="padala.html">Padala</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="pabili.html">PasaBuy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="resto.html">Store</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- CAROUSEL-->
+    <div class="row">
+        <div class="col">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="images/pasabuy/carousel-snr.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>S&R Pizza</h5>
+                            <p>A combination of mozzarella cheese, pork pepperoni and crumbles, topped withfresh green
+                                bell pepper, white onion and black olives
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="images/pasabuy/carousel-amber.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Amber Golden Chain of Restaurants</h5>
+                            <p>The Original Pancit Malabon, Delicious Pichi-Pichi, Yummy Pork BBQ, to name a few, became
+                                popular and well-loved AMBER signature dishes. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pasabuy/carousel-contis.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Conti's Bakeshop and Restaurant</h5>
+                            <p>A passion to create and serve delectable food reminiscent of the convenience and
+                                comforting warmth of one's own home, this is what we at Conti's are all about.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- END OF CAROUSEL-->
+
+    <div class="container mt-5" id="snr">
+        <h1>S&R Pizza</h1>
+        <p class="fst-italic lh-lg">There are people who like their pizzas plain and simple: tomato sauce, mozzarella
+            cheese, and some type of
+            meat. There are also out-of-this-world pizza eaters that, if given the chance, would put as many toppings
+            their pizza slice can handle. As the saying goes, "the more, the merrier!"</p>
+
+        <div class="row">
+            <img src="images/pasabuy/header-snr.jpg" alt="" class="img-fluid">
+        </div>
+
+        <!--CARDS -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/snr-cheese.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheese</h5>
+                        <p class="card-text">Four chesese pizza</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">PHP 626.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/snr-pepperoni.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pepperoni</h5>
+                        <p class="card-text">Made with mozzarella cheese and pork pepperoni.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">PHP 692.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/snr-combo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Combo</h5>
+                        <p class="card-text">A combination of mozzarella cheese, pork pepperoni and crumbles, topped
+                            withfresh green bell pepper, white onion and black olives.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">PHP 692.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img src="images/pasabuy/snr-garlicshrimp.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Garlic & Shrimp</h5>
+                        <p class="card-text">Pizza topped with mozzarella cheese , shrimps and garlic minced.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">PHP 692.00</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AMBERS -->
+    <div class="container mt-5" id="ambers">
+        <h1>Amber Golden Chain of Restaurants</h1>
+        <p class="fst-italic lh-lg">Amber Golden Plate Restaurant, the first and only branch in Makati, was established
+            in 1988. With everyone in the family working hard to ensure quality in both our products and service, the
+            restaurant steadily made a name in the offices in the Makati Business District and in the nearby cities. The
+            Original Pancit Malabon, Delicious Pichi-Pichi, Yummy Pork BBQ, to name a few, became popular and well-loved
+            AMBER signature dishes. I can still remember my Lolodaddy giving me a coin bank as a gift on my 30th
+            birthday.
+        </p>
+
+        <div class="row">
+            <img src="images/pasabuy/header-ambers.jpg" alt="" class="img-fluid">
+        </div>
+
+        <!--CARDS -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/ambers-pancit.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">The Original Pancit Malabon</h5>
+                        <p class="card-text">Taste the original panct malabon with a lot of toppings. Eggs, shrimps,
+                            vegetables and many more.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">21-25 Persons -- PHP 950.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/ambers-pichi.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pichi-Pichi with Cheese</h5>
+                        <p class="card-text">Delicious pichi-pichi with cheese on top.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">40 pieces -- PHP 260.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/ambers-bbq.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pork BBQ</h5>
+                        <p class="card-text">Marinated pork with secret sauce</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">5 sticks per order -- PHP 200.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img src="images/pasabuy/ambers-chicken.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chicken Lollipop</h5>
+                        <p class="card-text">Crispy chicken while juicy meat inside.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">5 pieces per order -- PHP 225.00</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTIS -->
+    <div class="container mt-5" id="contis">
+        <h1>Conti's Bakeshop & Restaurant</h1>
+        <p class="fst-italic lh-lg">Since opening its doors to families and friends in Parañaque in 1997, Conti's
+            Bakeshop and Restaurant has created and shared memories of togetherness to people who have come to love our
+            wide selection of products, including our signature dishes such as the Baked Salmon, Chicken Pie, and the
+            well-loved Mango Bravo.
+        </p>
+
+
+        <div class="row">
+            <img src="images/pasabuy/header-contis.jpg" alt="" class="img-fluid">
+        </div>
+
+        <!--CARDS -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/contis-mango.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mango Bravo</h5>
+                        <p class="card-text">Layers of crunchy wafers filled with chocolate mousse, cream and mango
+                            cubes.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Regular -- PHP 1490.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/contis-banana.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Banana Dream</h5>
+                        <p class="card-text">Layers of chewy wafers filled with banana cream, vanilla sponge, and mocha
+                            mousse, drizzled with caramel syrup.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Regular -- PHP 895.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/pasabuy/contis-choco.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Choco Overload</h5>
+                        <p class="card-text">Layers of different textures of chocolate cake with various chocolate
+                            fillings and toppings, finished with drizzles of chocolate syrup.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Regular -- PHP 995.00</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img src="images/pasabuy/contis-ube.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ube Custard</h5>
+                        <p class="card-text">Ube sponge cake with real purple yam and layers of creamy custard.</p>
+                        <a href="pabili-form.html" class="btn btn-success py-2 px-3">Order Now</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Regular -- PHP 935.00</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-muted">2021 All rights reserved | PasaBuy.me </span>
+        </div>
+    </footer>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

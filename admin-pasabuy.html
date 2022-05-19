@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pasabuy</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- FIRESTORE -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+
+    <style>
+        body{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/img_1.jpg");
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+
+    <!-- JQUERY CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/pasabuy.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                PasaBuy.me</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="admin-shipments.html">Shipments Table</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">PasaBuy Table</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!--PAGE CONTENT -->
+    <div class="container">
+        <div class="card border-0 shadow my-5">
+            <div class="card-body p-5 ">
+
+                <h3 class="text-dark bg-warning text-center">List of Orders Information</h3>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Contact Number</th>
+                                <th>Item</th>
+                                <th>Qty</th>
+                                <th>Amount</th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tblItems">
+                        </tbody>
+                    </table>
+                </div>
+
+                <button onclick="logOut()" class="btn btn-danger btn-lg">LogOut</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal FOR EDIT -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frmData">
+
+                        <div class="mb-3">
+                            <h5 class="text-dark mb-3">Tracking ID</h5>
+                            <input type="text" class="form-control" name="document" id="document"
+                                placeholder="Tracking ID" disabled>
+                        </div>
+
+
+                        <div class="mb-2">
+                            <h3 class="text-dark mb-3 mt-5">Customer Details</h3>
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name" id="name">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Address</label>
+                            <input type="text" class="form-control" name="address" id="address">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Contact Number</label>
+                            <input type="text" class="form-control" name="contactNumber" id="contactNumber">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" name="email" id="email">
+                        </div>
+
+                        <div class="mb-2">
+                            <h3 class="text-dark mb-3 mt-5">Order Details</h3>
+                            <label>Item</label>
+                            <select class="form-control form-select" aria-label="Default select example" name="item"
+                                id="item">
+                                <option disabled>Select an item</option>
+                                <optgroup label="S&R New York Style Pizza">
+                                    <option value="Cheese">Cheese</option>
+                                    <option value="Garlic & Shrimp">Garlic & Shrimp</option>
+                                    <option value="Combo">Combo</option>
+                                    <option value="Pepperoni">Pepperoni</option>
+                                </optgroup>
+
+                                <optgroup label="Amber Golden Plate">
+                                    <option value="Pancit Malabon">Pancit Malabon</option>
+                                    <option value="Pichi-pichi">Pichi-pichi</option>
+                                    <option value="Pork Barbeque">Pork Barbeque</option>
+                                    <option value="Chicken">Chicken</option>
+                                </optgroup>
+
+                                <optgroup label="Bakeshop Contis">
+                                    <option value="Mango Bravo">Mango Bravo</option>
+                                    <option value="Choco Overload">Choco Overload</option>
+                                    <option value="Ube Custard">Ube Custard</option>
+                                    <option value="Banana Dream">Banana Dream</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Quantity</label>
+                            <input type="text" class="form-control" name="qty" id="qty">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Amount</label>
+                            <input type="text" class="form-control" name="amount" id="amount"
+                                placeholder="Enter the amount" required>
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Mode of Payment</label>
+                            <select class="form-control form-select" aria-label="Default select example"
+                                name="modeOfPayment" id="modeOfPayment">
+                                <option disabled>Select a payment option</option>
+                                <option value="Cash On Delivery">Cash On Delivery</option>
+                                <option value="GCash">GCash</option>
+                                <option value="Paymaya">Paymaya</option>
+                                <option value="Shipper's Address (+P50)">Shipper's Address (+P50)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Unit</label>
+                            <select class="form-control form-select" aria-label="Default select example" name="unit"
+                                id="unit">
+                                <option selected disabled>Select the right unit</option>
+                                <option value="pcs">pcs</option>
+                                <option value="kg.">kg.</option>
+                                <option value="oz.'s Address (+P50)">oz.</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <h3 class="text-dark mb-3 mt-5">Shipping Details</h3>
+                            <label>Receiver's Name</label>
+                            <input type="text" class="form-control" name="receiverName" id="receiverName">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Receiver's Address</label>
+                            <input type="text" class="form-control" name="receiverAddress" id="receiverAddress">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Receiver's Contact Number</label>
+                            <input type="text" class="form-control" name="receiverContactNumber"
+                                id="receiverContactNumber">
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="text-dark mb-3 mt-5">Other Details</h3>
+                            <label class="form-label">Ordered Date</label>
+                            <input type="text" class="form-control" name="orderedDate" id="orderedDate"
+                                placeholder="00/00/00" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">ETA</label>
+                            <input type="datetime-local" class="form-control" name="arrivalDate" id="arrivalDate"
+                                placeholder="00/00/00" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+
+                            <select class="form-select " aria-label="Default select example" required name="status"
+                                id="status">
+                                <option selected disabled>Select status...</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Shipping">Shipping</option>
+                                <option value="Arrived">Arrived</option>
+                            </select>
+                        </div>
+
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="sendEmail">Send an Email</button>
+                    <button type="button" class="btn btn-primary" id="update">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal FOR DELETE-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Delete Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-dark mb-3">Tracking ID</h5>
+                    <input type="text" class="form-control" name="document2" id="document2" placeholder="Tracking ID"
+                        disabled>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- BOOTSTRAP JS SCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyD5OOyuKV9GzTclq-pR9d6wC6rKptNOvoU",
+            authDomain: "pasabuyme-7c866.firebaseapp.com",
+            projectId: "pasabuyme-7c866",
+            storageBucket: "pasabuyme-7c866.appspot.com",
+            messagingSenderId: "373849510378",
+            appId: "1:373849510378:web:02636e0dd8b0a4502f2293",
+            measurementId: "G-3M44DQZZN7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true })
+    </script>
+
+    <!-- EMAIL SCRIPT PLUGIN-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <script src="admin-pasabuy.js"></script>
+</body>
+
+</html>

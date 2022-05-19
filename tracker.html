@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>
+
+    <!-- BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+    <!-- FIRESTORE -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+    <style>
+        /* Set a background image by replacing the URL below */
+        body {
+            background: url('images/hero_bg_4.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="images/pasabuy.jpg" width="30" height="30"
+                class="d-inline-block align-top" alt="">PasaBuy.me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="padala.html">Padala</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pabili.html">PasaBuy</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="resto.html">Store</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container " style="max-width:60rem;">
+        <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+
+                <h4 class="text-center font-weight-bold mb-3">ENTER TRACKING ID</h4>
+
+                <form>
+                    <div class="row ">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="trackingID" id="trackingID"
+                                placeholder="Enter your tracking ID">
+                        </div>
+
+                        <div class="col-sm">
+                            <button type="button" class="btn btn-info" id="search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg> Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <input type="hidden" class="form-control disabled" name="document" id="document">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHIPEMENT INFO -->
+    <div class="container" style="max-width: 80rem;">
+        <div class="row justify-content-md-center">
+
+            <div class="col-sm-12">
+                <div class="card border-0 shadow my-5">
+                    <div class="card-body p-5 ">
+                        <h3 class="text-dark bg-warning text-center mb-4">Shipment Information</h3>
+
+                        <form id="frmShipInfo">
+                            <h3 class="text-dark mb-3">Shipper Details</h3>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Name</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="customerName" id="customerName"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Address</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="address" id="address" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Contact #</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="contactnum" id="contactnum" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Email</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="email" id="email" readonly>
+                                </div>
+                            </div>
+
+                            <h3 class="text-dark mb-3 mt-5">Package Details</h3>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Item Description</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="itemDesc" id="itemDesc" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Item Quantity</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="itemQty" id="itemQty" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Item Weight</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="itemWeight" id="itemWeight" readonly>
+                                </div>
+                            </div>
+
+
+                            <h3 class="text-dark mb-3 mt-5">Shipping Details</h3>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Shipping Name</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="shippingName" id="shippingName"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Shipping Address</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="shippingAddress" id="shippingAddress"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Shipping Contact #</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="shippingContactNum"
+                                        id="shippingContactNum" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Shipping Email</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="shippingEmail" id="shippingEmail"
+                                        readonly>
+                                </div>
+                            </div>
+
+
+                            <h3 class="text-dark mb-3 mt-5">Other Info</h3>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Ordered Date</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="orderedDate" id="orderedDate"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">ETA</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="arrivalDate" id="arrivalDate"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-sm-3">
+                                    <label class="form-label">Status</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="status" id="status" readonly>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--END OF SHIPMENT INFO-->
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-muted">2021 All rights reserved | PasaBuy.me </span>
+        </div>
+    </footer>
+
+
+
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyD5OOyuKV9GzTclq-pR9d6wC6rKptNOvoU",
+            authDomain: "pasabuyme-7c866.firebaseapp.com",
+            projectId: "pasabuyme-7c866",
+            storageBucket: "pasabuyme-7c866.appspot.com",
+            messagingSenderId: "373849510378",
+            appId: "1:373849510378:web:02636e0dd8b0a4502f2293",
+            measurementId: "G-3M44DQZZN7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true })
+    </script>
+
+    <script src="tracker.js"> </script>
+</body>
+
+</html>

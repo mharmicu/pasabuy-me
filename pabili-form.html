@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabili Form</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+    <!-- FIRESTORE -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+    <style>
+        /* Set a background image by replacing the URL below */
+        body {
+            background: url('images/food-delivery-service.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/pasabuy.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                PasaBuy.me</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="tracker.html">Tracker</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="padala.html">Padala</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="pabili.html">PasaBuy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="resto.html">Store</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-8">
+
+                <div class="card border-0 shadow my-5">
+                    <div class="card-body p-5">
+
+                        <h4 class="text-center mb-5 font-weight-bold">PABILI INFORMATION FORM</h4>
+
+                        <form id="frmData">
+
+                            <div class="mb-2">
+                                <h3 class="text-dark mb-3 mt-5">Customer Details</h3>
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" name="name" id="name">
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Address</label>
+                                <input type="text" class="form-control" name="address" id="address">
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Contact Number</label>
+                                <input type="text" class="form-control" name="contactNumber" id="contactNumber">
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+
+                            <div class="mb-2">
+                                <h3 class="text-dark mb-3 mt-5">Order Details</h3>
+                                <label>Item</label>
+                                <select class="form-control form-select" aria-label="Default select example" name="item"
+                                    id="item">
+                                    <option selected disabled>Select an item</option>
+                                    <optgroup label="S&R New York Style Pizza">
+                                        <option value="Cheese">Cheese</option>
+                                        <option value="Garlic & Shrimp">Garlic & Shrimp</option>
+                                        <option value="Combo">Combo</option>
+                                        <option value="Pepperoni">Pepperoni</option>
+                                    </optgroup>
+
+                                    <optgroup label="Amber Golden Plate">
+                                        <option value="Pancit Malabon">Pancit Malabon</option>
+                                        <option value="Pichi-pichi">Pichi-pichi</option>
+                                        <option value="Pork Barbeque">Pork Barbeque</option>
+                                        <option value="Chicken">Chicken</option>
+                                    </optgroup>
+
+                                    <optgroup label="Bakeshop Contis">
+                                        <option value="Mango Bravo">Mango Bravo</option>
+                                        <option value="Choco Overload">Choco Overload</option>
+                                        <option value="Ube Custard">Ube Custard</option>
+                                        <option value="Banana Dream">Banana Dream</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Quantity</label>
+                                <input type="text" class="form-control" name="qty" id="qty">
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Amount</label>
+                                <input type="text" class="form-control" name="amount" id="amount" readonly>
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Mode of Payment</label>
+                                <select class="form-control form-select" aria-label="Default select example"
+                                    name="modeOfPayment" id="modeOfPayment">
+                                    <option selected disabled>Select a payment option</option>
+                                    <option value="Cash On Delivery">Cash On Delivery</option>
+                                    <option value="GCash">GCash</option>
+                                    <option value="Paymaya">Paymaya</option>
+
+                                </select>
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Unit</label>
+                                <select class="form-control form-select" aria-label="Default select example" name="unit"
+                                    id="unit">
+                                    <option selected disabled>Select the right unit</option>
+                                    <option value="pcs">pcs</option>
+                                    <option value="kg.">kg.</option>
+                                    <option value="oz.'s Address (+P50)">oz.</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-2">
+                                <h3 class="text-dark mb-3 mt-5">Shipping Details</h3>
+                                <label>Receiver's Name</label>
+                                <input type="text" class="form-control" name="receiverName" id="receiverName">
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Receiver's Address</label>
+                                <input type="text" class="form-control" name="receiverAddress" id="receiverAddress">
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Receiver's Contact Number</label>
+                                <input type="text" class="form-control" name="receiverContactNumber"
+                                    id="receiverContactNumber">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-warning" id="add">Place an Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-muted">2021 All rights reserved | PasaBuy.me </span>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyD5OOyuKV9GzTclq-pR9d6wC6rKptNOvoU",
+            authDomain: "pasabuyme-7c866.firebaseapp.com",
+            projectId: "pasabuyme-7c866",
+            storageBucket: "pasabuyme-7c866.appspot.com",
+            messagingSenderId: "373849510378",
+            appId: "1:373849510378:web:02636e0dd8b0a4502f2293",
+            measurementId: "G-3M44DQZZN7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var db = firebase.firestore();
+        db.settings({ timestampsInsnapshots: true })
+    </script>
+
+    <script src="pabili-form.js"></script>
+
+
+    <!-- BOOTSTRAP JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

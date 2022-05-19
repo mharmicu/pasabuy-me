@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padala</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        /* The hero image */
+        .hero-image {
+            /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/pasabuy/header-package.jpg");
+
+            /* Set a specific height */
+            height: 50%;
+
+            /* Position and center the image to scale nicely on all screens */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Place text in the middle of the image */
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(cardboard-boxes.jpg);
+            background-position: center;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/pasabuy.jpg" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
+                PasaBuy.me</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="tracker.html">Tracker</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Padala</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="pabili.html">PasaBuy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="resto.html">Store</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 class="display-5">Want to Ship Something?</h1>
+            <p>PasaBuy.me</p>
+            <a href="padala-form.html" class="btn btn-warning py-3 px-5">Make a Padala!</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col mb-3">
+                <div class="card h-100">
+                    <img src="images/pasabuy/updates-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">PADALA UPDATE!!!</h5>
+                        <p class="card-text">Our dear customers, this is the schedule for our next transaction.</p>
+                        <p class="card-text">CUT OFF: March 13 (7:00 pm)</p>
+                        <a href="#" class="btn btn-warning py-2 px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalUpdates1">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 5 days ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card h-100">
+                    <img src="images/pasabuy/updates-2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">1st Anniversary</h5>
+                        <p class="card-text">Cheers! Happy 1st Anniversary to each and everyone. Thank you for choosing
+                            and using PasaBuy.Me </p>
+                        <p class="card-text">For more shipping needs, we are ready to help you move. </p>
+                        <a href="#" class="btn btn-warning py-2 px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalUpdates2">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 7 days ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card h-100">
+                    <img src="images/pasabuy/updates-3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Proof of our transaction</h5>
+                        <p class="card-text">THANK YOU SO MUCH!!! ❤️❤️❤️ </p>
+                        <p class="card-text">Feel free to contact us for more inquries. </p>
+
+                        <a href="#" class="btn btn-warning py-2 px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalUpdates3">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 7 days ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img src="images/pasabuy/updates-4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">PADALA UPDATE!</h5>
+                        <p class="card-text">LUBANG-MANILA via Roro ⛴
+                            Para po sa mga magpapadala papuntang Manila, magkakaroon po ng byahe from Lubang to Manila
+                            sa March 3 at 6, 2021. Maaari nyo pong dalahin sa aming location bago mag 6:00AM.</p>
+                        <p class="card-text">For more shipping needs, we are ready to help you move. </p>
+                        <a href="#" class="btn btn-warning py-2 px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalUpdates4">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 13 days ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img src="images/pasabuy/updates-5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">PADALA UPDATE!</h5>
+                        <p class="card-text">⛴ TRIP TO CAVITE via RoRo ⛴ <br><br>
+                            🟡 Name, Contact at Address sa inyong mga padala. <br>
+                            🟡 Bawal magpadala ng mga pagkaing may sangkap n....</p>
+
+                        <a href="#" class="btn btn-warning py-2 px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalUpdates5">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 13 days ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img src="images/pasabuy/updates-6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">PADALA UPDATE!</h5>
+                        <p class="card-text">⛴ MANILA-LUBANG via Banton Pearl ⛴ <br><br>
+                            Nagsisimula na po kaming tumanggap ng inyong mga padala papuntang Lubang.<br>
+                            📌Pakilagyan po ng pangalan, contact number at address ang inyong mga padala.<br>
+                            📌 Bawal pa rin po ang magpa-uwi sa Lubang ng mga produktong may sangkap na ... </p>
+
+                        <a href="#" class="btn btn-warning py-2 px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalUpdates6">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 14 days ago</small>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!--MODALSSSSSSSS -->
+    <!-- Modal Updates 1 -->
+    <div class="modal fade" id="modalUpdates1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Padala Update</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pasabuy/updates-1.jpg" class="card-img-top" alt="...">
+                    <p class="lh-lg"><br>⛴ TRIP TO CAVITE via RoRo ⛴ <br><br>
+
+                        🟡 Name, Contact at Address sa inyong mga padala. <br>
+                        🟡 Bawal magpadala ng mga pagkaing may sangkap ng BABOY.<br>
+                        🟡 Pakiiwasan ang pagpapadala ng mga madaling masira o mabulok na mga padala.<br><br>
+
+                        📌 LUBANG-CAVITE<br>
+                        📍Brgy. Bagong Sikat (tapat ni Mr. Lim)<br>
+                        📲Geen Villamar | 09288989407<br>
+                        Cut-off: March 13, 2021 (Saturday); before 6:00 AM<br><br>
+
+                        📌CAVITE-LUBANG<br>
+                        📍Phase 3, Green Estate Subd. Malagasang 1-G, Imus<br>
+                        📲 Mae Sales Puli | 09386210494<br>
+                        Cut-Off: March 13, 2021 (Saturday); 7PM<br>
+                        ETA to Lubang: March 14 (sunday)<br><br>
+
+                        Magpadala na lang po ng mensahe para sa ibang katanungan.<br>
+
+                        Maraming Salamat po! ❤️😁</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Updates 2-->
+    <div class="modal fade" id="modalUpdates2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">1st Anniversary</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pasabuy/updates-2.jpg" class="card-img-top" alt="...">
+                    <p class="lh-lg"><br>
+                        <center>Cheers! 🥂 Happy 1st Anniversary <br>PasaBuy.me Lubang Forwarder! 🎉</center><br><br>
+                        Maraming salamat po sa lahat ng mga sumuporta at nagtiwala na maihatid namin sa inyo ang aming
+                        serbisyo lalong lalo na ngayong pandemya. Pag-iigihin pa po namin upang mabigyan kayo ng
+                        maaasahan at tapat na serbisyo.<br><br>
+                        Kaya bilang pasasalamat, magkakaroon po tayo ng libreng RAFFLE para sa lahat ng nagpadala sa
+                        ating mga branches sa San Juan Manila, Cavite, at Valenzuela na gaganapin sa MARCH 13, 2021.
+                        ❤️☺️<br><br>
+                        Magkakaroon din po ng ANNIVERSARY SPECIAL DISCOUNT para sa lahat ng magpapadala mula ngayong
+                        araw MARCH 8, 2021 hanggang MARCH 20, 2021.<br><br>
+                        Maraming salamat pong muli at nawa’y patuloy pa rin kayong magtiwala sa aming serbisyo. ❤️
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Updates 3-->
+    <div class="modal fade" id="modalUpdates3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Proof of Transaction</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pasabuy/updates-3.jpg" class="card-img-top" alt="...">
+                    <p class="lh-lg text-center"><br> Thank you so much! ❤️☺️<br><br>
+                        Next batch: Saturday (to Cavite) & Sunday (to Lubang)</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Updates 4-->
+    <div class="modal fade" id="modalUpdates4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">PADALA UPDATE!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pasabuy/updates-4.jpg" class="card-img-top" alt="...">
+                    <p class="lh-lg text-center"><br> <center>LUBANG-MANILA via Roro ⛴</center><br><br>
+                        Para po sa mga magpapadala papuntang Manila, magkakaroon po ng byahe from Lubang to Manila sa 
+                        March 3 at 6, 2021. Maaari nyo pong dalahin sa aming location bago mag 6:00AM.<br><br>
+                        Contact: LUBANG<br>
+                        📲Geen Villamar | 0928-898-9407<br>
+                        📍Brgy. Bagong Sikat (tapat ni Mr. Lim)<br><br>
+                        Contact: MANILA<br>
+                        📲 0998-480-5030<br>
+                        📍A.Luna St., Salapan, San Juan<br>
+                        Thank you po! ❤️</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Updates 5-->
+    <div class="modal fade" id="modalUpdates5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">PADALA UPDATE!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pasabuy/updates-5.jpg" class="card-img-top" alt="...">
+                    <p class="lh-lg text-center"><br>
+                        <center>⛴ TRIP TO CAVITE via RoRo ⛴</center><br><br>
+                        🟡 Name, Contact at Address sa inyong mga padala.<br>
+                        🟡 Bawal magpadala ng mga pagkaing may sangkap ng BABOY.<br>
+                        🟡 Pakiiwasan ang pagpapadala ng mga madaling masira o mabulok na mga padala.<br><br>
+                        📌 LUBANG-CAVITE<br>
+                        📍Brgy. Bagong Sikat (tapat ni Mr. Lim)<br>
+                        📲Geen Villamar | 09288989407<br>
+                        Cut-off: March 6, 2021 (Saturday); before 6:00 AM<br><br>
+                        📌CAVITE-LUBANG<br>
+                        📍Phase 3, Green Estate Subd. Malagasang 1-G, Imus<br>
+                        📲 Mae Sales Puli | 09386210494<br>
+                        Cut-Off: March 6, 2021 (Saturday); 8PM<br>
+                        ETA to Lubang: March 7 (sunday)<br><br>
+                        Magpadala na lang po ng mensahe para sa ibang katanungan.
+                        Maraming Salamat po! ❤️😁
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Updates 6-->
+    <div class="modal fade" id="modalUpdates6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">PADALA UPDATE!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/pasabuy/updates-6.jpg" class="card-img-top" alt="...">
+                    <p class="lh-lg text-center"><br>
+                        <center>⛴ MANILA-LUBANG via Banton Pearl ⛴ </center><br><br>
+                        Nagsisimula na po kaming tumanggap ng inyong mga padala papuntang Lubang.<br>
+                        📌Pakilagyan po ng pangalan, contact number at address ang inyong mga padala.<br>
+                        📌 Bawal pa rin po ang magpa-uwi sa Lubang ng mga produktong may sangkap na PORK/BABOY.<br>
+                        📌 Pakiiwasan rin po ang pagpapadala ng madadaling masirang pagkain dahil minsan ay nag-iiba ang
+                        schedule ng barko.<br><br>
+                        Cut-Off: Wednesday (March 3); until 7:00PM<br>
+                        ETA to Lubang: Friday (March 4)<br><br>
+                        CONTACT:<br>
+                        📍#12 Aurora Blvd. Salapan, San Juan City<br>
+                        Landmark: Diwa Stairs or Dolores Pancit Malabon<br>
+                        📲 (San Juan)Gloribeth | 0947-770-6920<br>
+                        📲 (Lubang) Geen | 0928-898-9407<br>
+                        Maraming Salamat po! 😁❤️
+                    </p><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END OF MODALSSSSSS-->
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">2021 All rights reserved | PasaBuy.me </span>
+        </div>
+    </footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
